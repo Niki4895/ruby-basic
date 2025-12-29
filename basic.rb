@@ -16,7 +16,8 @@ class TestData
   end
 
 =begin
-  Ruby multi line comments only work when there is no whitespace between the start of the line and the =begin (the same applies to the =end). Make sure the line starts with =begin:
+  Ruby multi line comments only work when there is no whitespace between the start of the line
+  and the =begin (the same applies to the =end). Make sure the line starts with =begin:
 =end
   def boolean_data
     if true
@@ -53,7 +54,7 @@ class TestData
     p @@no_of_customers
 
     # Global Variable
-    puts "Global variable in Class2 is #$global_variable"
+    puts "Global variable in Class2 is #{$global_variable}"
   end
 end
 
