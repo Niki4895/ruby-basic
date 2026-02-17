@@ -83,7 +83,7 @@ Double Colon (::) operator is used to access the constants, class methods, and i
 
 # operator overloading
 class Car
-    attr_accessor:name, :color
+    attr_accessor :name, :color
  
     # Initialize the name and color
     def initialize(name, color)
@@ -102,3 +102,33 @@ b = Car.new("Audi", "Silver")
 puts (a+b).inspect
 
 p $FILENAME
+
+class Person
+  attr_reader :name, :gender, :social_id
+  attr_accessor :age
+
+  def initialize(name, age, gender, social_id)
+    @name = name
+    @age = age.to_i
+    @gender = gender
+    @social_id = social_id
+  end
+
+  def ==(other)
+    @social_id == other.social_id
+  end
+end
+
+
+person = Person.new('Niki', '29', 'Female', '1231')
+
+p person == Person.new('Niki', '29', 'Female', '1231') # true
+p person == Person.new('Niki', '29', 'Female', '12312') # false
+
+class String
+  def << str
+    self + "*" + str
+  end
+end
+
+puts "str" << "sss"  
