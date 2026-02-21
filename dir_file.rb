@@ -138,4 +138,83 @@ p Dir.rmdir("abc/parent_folder")
 p Dir.delete('abc') if Dir.exists?("abc")
 
 
+# Dir Class Methods
 
+# mkdir : This method is used to create a new directory. You can also put permission on the new directory.
+# Dir.mkdir "dir_name", permission
+
+# Deleting directory : To delete a directory rmdir, delete, and unlink methods are used, the work of all these methods are same.
+# Dir.delete "dir_name"
+# Dir.rmdir "dir_name"
+# Dir.unlink " Dir_name"
+
+#  exist? : By using exist? method you can check whether the directory exists or not. It returns value in true or false.
+# Dir.exist?"dir_name"
+
+# pwd : To check the current working directory, pwd(present working directory) method is used.
+# Dir.pwd
+
+# chdir : To change the current working directory, chdir method is used. In this method, you can simply pass the path to the directory where you want to move.
+# Dir.chdir ”path”
+
+# entries : To check what a directory contains. It provides you with an array of content.
+# Dir.entries”dir_name” #[“.”, “..”, “file.txt”, “another directory”]
+
+# getwd : This method is used to return path of the current working directory.
+# Dir.getwd
+
+# home : This method is used to return home directory of current user.
+# Dir.home
+
+# glob : This method is used to heck certain file in the current directory. It works on pattern matching concept. It expands pattern i.e array of pattern or a string pattern and returns the value as matched. Some notations used in glob method are:
+# Dir.glob(“pattern”)
+# *: It matches all files.
+# c*: It matches files starting with c.
+# *c: It matches files ending with c.
+# *c*: It matches all the files with contains c in them including starting and ending.
+# **: It matches directories recursively.
+# ?: it matches any one character.
+# [set]: It matches any one character in the set.
+# {p, q}: It matches either p or either q literal.
+# \: It escapes the next metacharacter.
+
+p "-----------------------------------"
+# Dir Instance Methods
+# close : It is used to close the directory stream.
+Dir.mkdir "test"
+h_o = Dir.new("test")
+p h_o.close
+
+# each : In each method, the block should be called once for each entry in the directory and pass the filename for each entry as a parameter to the block.
+h_o = Dir.new("test")
+p h_o.each{|x| puts "Got#{x}"}
+
+# fileno : This method is used to provide the file number used in dir or we can say it provides the description of the file in integer value.
+h_o = Dir.new("test")
+p h_o.fileno
+
+# path : This method returns the path parameter.
+h_o = Dir.new("test")
+p h_o.path
+
+# pos : This method returns current position parameter.
+h_o = Dir.new("test")
+p h_o.pos
+
+# read : This method reads the next entry from the dir and returns as a string.
+h_o = Dir.new("test")
+p h_o.read
+
+# tell : This method is used to tell the current position in dir.
+h_o = Dir.new("test")
+p h_o.tell
+
+# seek : This method is used to seek the specific location in dir. It returns value in the form of integer.
+h_o = Dir.new("test")
+p h_o.seek(1)
+
+# Rewind : This method is used to reposition dir to the first position.
+h_o = Dir.new("test")
+p h_o.rewind
+
+Dir.rmdir "test"
