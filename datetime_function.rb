@@ -156,7 +156,7 @@ p DateTime.rfc3339('2001-02-03T04:05:06+07:00') #=> #<DateTime: 2001-02-03T04:05
 
 # rfc822(string='Mon, 1 Jan -4712 00:00:00 +0000'[, start=Date::ITALY]) → datetimeclick
 # Creates a new DateTime object by parsing from a string according to some typical RFC 2822 formats.
-p DateTime.rfc2822('Sat, 3 Feb 2001 04:05:06 +0700') #=> #<DateTime: 2001-02-03T04:05:06+07:00 ...>
+p DateTime.rfc822('Sat, 3 Feb 2001 04:05:06 +0700') #=> #<DateTime: 2001-02-03T04:05:06+07:00 ...>
 
 p "==========================================================================="
 

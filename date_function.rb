@@ -56,7 +56,7 @@ p Date._rfc2822('Sat, 3 Feb 2001 04:05:06 +0700') # {:wday=>6, :mday=>3, :mon=>2
 p Date._rfc3339('2001-02-03T04:05:06+07:00') # {:year=>2001, :mon=>2, :mday=>3, :hour=>4, :min=>5, :sec=>6, :zone=>"+07:00", :offset=>25200}
 
 # _rfc822(string) → hash
-p Date._rfc2822('Sat, 3 Feb 2001 04:05:06 +0700') # {:wday=>6, :mday=>3, :mon=>2, :year=>2001, :hour=>4, :min=>5, :sec=>6, :zone=>"+0700", :offset=>25200}
+p Date._rfc822('Sat, 3 Feb 2001 04:05:06 +0700') # {:wday=>6, :mday=>3, :mon=>2, :year=>2001, :hour=>4, :min=>5, :sec=>6, :zone=>"+0700", :offset=>25200}
 
 # _strptime(string[, format='%F']) → hash
 p Date._strptime('2001-02-03', '%Y-%m-%d') #=> {:year=>2001, :mon=>2, :mday=>3}
@@ -125,7 +125,7 @@ p Date.rfc2822('Sat, 3 Feb 2001 00:00:00 +0000') #=> #<Date: 2001-02-03 ...>
 p Date.rfc3339('2001-02-03T04:05:06+07:00') #=> #<Date: 2001-02-03 ...>
 
 # rfc822(string='Mon, 1 Jan -4712 00:00:00 +0000'[, start=Date::ITALY]) → date
-p Date.rfc2822('Sat, 3 Feb 2001 00:00:00 +0000') #=> #<Date: 2001-02-03 ...>
+p Date.rfc822('Sat, 3 Feb 2001 00:00:00 +0000') #=> #<Date: 2001-02-03 ...>
 
 # strptime([string='-4712-01-01'[, format='%F'[, start=Date::ITALY]]]) → date
 p Date.strptime('2001-02-03', '%Y-%m-%d')   #=> #<Date: 2001-02-03 ...>
@@ -163,6 +163,8 @@ p Date.valid_ordinal?(2001,366)     #=> false
 p Date.xmlschema('2001-02-03')      #=> #<Date: 2001-02-03 ...>
 
 p "============Public Instance Methods====================="
+
+# In Ruby, the Rational class is used within the Date and DateTime modules to handle fractions of a day with absolute precision, avoiding floating-point rounding errors.
 
 # d + other → date
 p Date.new(2001,2,3) + 1    #=> #<Date: 2001-02-04 ...>
