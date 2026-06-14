@@ -157,3 +157,21 @@ p "======================STRING======================"
 # unicode_normalized?(form = :nfc)
 # unpack(template, offset: 0, &block) 
 # upcase(*options) / upcase!(*options)
+
+p "=================SYMBOL=============================="
+# object_id
+# Symbol.all_symbols.size 
+# id2name(to_s) -> string of symbol
+# inspect
+# <=>
+# a==b
+# []
+# capitalize
+# casecmp
+# downcase
+# length
+# slice(index)
+# swapcase
+# upcase
+# collect(&:to_s)
+# to_sym
